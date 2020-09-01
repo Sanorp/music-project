@@ -7,6 +7,20 @@ const MusicComponent = () => {
     const [ longness, setLongness ] = useState(0)
     const [ number, setNumber ] = useState(0)
 
+    //TODO
+    /*
+
+    1. Create harmony structure randomly:
+        - enter number of bars to be created
+        - enter number of beats in a bar
+        - enter the main scale of those bars
+        - emter the tempo of those bars
+        - (optional) enter some kind of parameters for randomization
+
+    2. Create small themes/melodies, save them in the app and use them for the randomization
+
+     */
+
 
     var midiWriter = require('midi-writer-js');
 
