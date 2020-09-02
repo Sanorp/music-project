@@ -2,6 +2,7 @@ import React from 'react';
 import RandomMelody from "../components/RandomMelody"
 import HarmonyGenerator from "../components/HarmonyGenerator"
 import '../css/Components.css'
+import ScalePlayer from "./ScalePlayer";
 const MusicComponent = () => {
 
 
@@ -32,7 +33,11 @@ const MusicComponent = () => {
             </header>
             <content width="100%">
                 <RandomMelody />
+                <div className="Spacer"/>
+                <ScalePlayer/>
+                <div className="Spacer"/>
                 <HarmonyGenerator/>
+                <div className="Spacer"/>
             </content>
         </div>
     );
