@@ -1,0 +1,49 @@
+.Header {
+    color: cornflowerblue;
+}
+.SmallHeader {
+    color: darkcyan;
+    float: left;
+    padding-left: 50px;
+    width:30%; font-size: large;
+}
+.hbox {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    /*Align children horizontally*/
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+}
+.vbox {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+
+    /*Align children vetically*/
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    -webkit-align-content: flex-start;
+    -ms-flex-line-pack: start;
+    align-content: flex-start;
+}
+.parameters {
+    font-size: medium;
+}
+.center {
+    align-items: center;
+}
+.RandomMelody {
+    background-color: #a12c23;
+}
+.midiSounds {
+    float: right;
+}

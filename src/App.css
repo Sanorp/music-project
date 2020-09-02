@@ -1,5 +1,15 @@
 .App {
   text-align: center;
+  background-color: #282c34;
+  align-items: center;
+  /*display: flex;*/
+  flex-direction: column;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.RandomMelody {
+  background-color: #ff2c34;
 }
 
 .App-logo {
