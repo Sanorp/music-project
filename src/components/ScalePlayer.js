@@ -1,16 +1,14 @@
 import React, {useState}from 'react'
-import MIDISounds from "midi-sounds-react";
 import '../css/Components.css'
 import util from '../util/Utilities'
 
 
 
-const ScalePlayer = () => {
+const ScalePlayer = ({midiSounds}) => {
 
     const [baseNote , setBaseNote] = useState(30)
     const [scaleName, setScaleName] = useState('major')
     const [octaveLength, setOctaveLength] = useState(2)
-    const [midiSounds, setMidiSounds] = useState(null)
 
     const onChangeBaseNote = (event) => {
         setBaseNote(Number(event.target.value))
@@ -34,7 +32,7 @@ const ScalePlayer = () => {
     }
 
     return (
-        <div className="RandomMelody" width="100%" >
+        <div className="Background" width="100%" >
             <h4 className="SmallHeader"> Play Scale</h4>
             <div className="hbox parameters">
                 <div className="vbox">
@@ -45,9 +43,6 @@ const ScalePlayer = () => {
                         <button onClick={() => {playScale(false)}}> Scale forwards </button>
                         <button onClick={() => {playScale(true)}}> Scale backwards</button>
                     </div>
-                </div>
-                <div className="center midiSounds">
-                    <MIDISounds ref={(ref) => (setMidiSounds(ref))} appElementName="root" instruments={[3]}/>
                 </div>
             </div>
         </div>

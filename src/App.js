@@ -7,9 +7,7 @@ function App() {
 
   return (
     <div className="App" width="100%">
-
         <MusicComponent/>
-
     </div>
   );
 }

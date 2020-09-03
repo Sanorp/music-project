@@ -1,10 +1,11 @@
-var rythmInBar = {
+//TODO Replace all theory with a server call, that returns a fitting json. As seen in '../ressources/BasicMusicStructure'
+var rhythmInBar = {
     tempo:  60,
     mainBeatsInBar: 4,
-    baseScale: 'c:maj'  // every rythm has a base scale
+    baseScale: 'c:maj'  // every rhythm has a base scale
 }
 var harmonyInBar = {
-    rythmInBar: undefined,
+    rhythmInBar: undefined,
     chords: []
 }
 var chords = {
@@ -110,15 +111,13 @@ const createChordTypesFromScaleAndDegrees = (scaleName, progression) =>{
         case 'major':
             chordTypesOfScale = ['maj','min','min','maj','maj','min','dim'];
             break;
-            case 'minor':
+        case 'minor':
             chordTypesOfScale = ['min','dim','maj','min','min','maj','maj'];
             break;
         default:
             chordTypesOfScale = ['maj','min','min','maj','maj','min','dim'];
     }
     return progression.map(i => chordTypesOfScale[i]);
-
-
 }
 const generateNumericProression = (progression) => {
     var returnArray = progression.split('-');
@@ -128,7 +127,10 @@ const generateNumericProression = (progression) => {
     })
     return returnArray;
 }
+const getRandomInt = (max) => {
+    return Math.floor(Math.random() * Math.floor(max));
+}
 
 
 
-export default {harmonyInBar, rythmInBar, chords, bar, createScale, createChord,createChordTypesFromScaleAndDegrees, generateNumericProression}
+export default {harmonyInBar, rhythmInBar, chords, bar, createScale, createChord,createChordTypesFromScaleAndDegrees, generateNumericProression, getRandomInt}

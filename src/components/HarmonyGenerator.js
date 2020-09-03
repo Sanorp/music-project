@@ -1,16 +1,14 @@
 import React, {useState}from 'react'
-import MIDISounds from "midi-sounds-react";
 import '../css/Components.css'
 import util from '../util/Utilities'
 
 
 
-const HarmonyGenerator = () => {
+const HarmonyGenerator = ({midiSounds}) => {
 
     const [baseNote , setBaseNote] = useState(50)
     const [scaleName, setScaleName] = useState('major')
     const [chordProgression, setChordProgression] = useState('1-4-5-1')
-    const [midiSounds, setMidiSounds] = useState(null)
 
     const onChangeBaseNote = (event) => {
         setBaseNote(Number(event.target.value))
@@ -41,7 +39,7 @@ const HarmonyGenerator = () => {
     }
 
     return (
-        <div className="RandomMelody" width="100%" >
+        <div className="Background" width="100%" >
             <h4 className="SmallHeader"> Play Chord Proression</h4>
             <div className="hbox parameters">
                 <div className="vbox">
@@ -51,9 +49,6 @@ const HarmonyGenerator = () => {
                     <div className="hbox">
                         <button onClick={() => {playProgression()}}> Play the Progression </button>
                     </div>
-                </div>
-                <div className="center midiSounds">
-                    <MIDISounds ref={(ref) => (setMidiSounds(ref))} appElementName="root" instruments={[3]}/>
                 </div>
             </div>
         </div>

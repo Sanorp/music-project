@@ -1,11 +1,9 @@
 import React, {useState} from "react";
-import MIDISounds from 'midi-sounds-react';
 import "../css/Components.css"
 import scale from '../util/Utilities'
 
-const RandomMelody = () => {
+const RandomMelody = ({midiSounds}) => {
 
-    const [ midiSounds, setMidiSounds ] = useState(null);
     const [ longness, setLongness ] = useState(0)
     const [ number, setNumber ] = useState(0)
 
@@ -44,7 +42,7 @@ const RandomMelody = () => {
 
 
     return (
-        <div className="RandomMelody parameters" width="100%">
+        <div className="Background parameters" width="100%">
             <h4 className="SmallHeader"> Random-Melody</h4>
             <div className="hbox">
                 <div className="vbox">
@@ -52,9 +50,6 @@ const RandomMelody = () => {
                     <div> Number: <input onChange={changeNumber} value={number}/> </div>
                     <button onClick={() => {playRandomNotes(longness, number)}}>Random</button>
                     <button onClick={playTestInstrument}>Play</button>
-                </div>
-                <div className="center">
-                    <MIDISounds ref={(ref) => (setMidiSounds(ref))} appElementName="root" instruments={[3]}/>
                 </div>
             </div>
         </div>
